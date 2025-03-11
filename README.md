@@ -1,2 +1,2 @@
-# OriginCar-Develop
-智能车竞赛代码仓
+# OriginCar vision
+智能车竞赛视觉代码仓
