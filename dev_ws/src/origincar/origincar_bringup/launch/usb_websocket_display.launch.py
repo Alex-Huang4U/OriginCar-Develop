@@ -39,19 +39,19 @@ def generate_launch_description():
                                                           'websocket_smart_topic': LaunchConfiguration("dnn_example_msg_pub_topic_name")}.items())
 
     # Algorithm node
-    dnn_node_example_node = Node(
-        package='dnn_node_example',
-        executable='example',
-        output='screen',
-        parameters=[
-            {"config_file": LaunchConfiguration('dnn_example_config_file')},
-            {"dump_render_img": LaunchConfiguration('dnn_example_dump_render_img')},
-            {"feed_type": 1},
-            {"is_shared_mem_sub": 1},
-            {"msg_pub_topic_name": LaunchConfiguration("dnn_example_msg_pub_topic_name")}
-        ],
-        arguments=['--ros-args', '--log-level', 'warn']
-    )
+    # dnn_node_example_node = Node(
+    #     package='dnn_node_example',
+    #     executable='example',
+    #     output='screen',
+    #     parameters=[
+    #         {"config_file": LaunchConfiguration('dnn_example_config_file')},
+    #         {"dump_render_img": LaunchConfiguration('dnn_example_dump_render_img')},
+    #         {"feed_type": 1},
+    #         {"is_shared_mem_sub": 1},
+    #         {"msg_pub_topic_name": LaunchConfiguration("dnn_example_msg_pub_topic_name")}
+    #     ],
+    #     arguments=['--ros-args', '--log-level', 'warn']
+    # )
     image_transport_node = Node(
         package='utils',
         executable='image_transport_node',
@@ -61,7 +61,7 @@ def generate_launch_description():
     return LaunchDescription(launch_args + [
         usb_node,
         nv12_codec_node,
-        dnn_node_example_node,
+        #dnn_node_example_node,
         web_node,
         image_transport_node
     ])
